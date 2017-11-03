@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+            $("textarea").keydown(function(e){
+                var keycode = e.which;
+                $("#field").val(keycode);
+            });
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <textarea id="area" rows="10" cols="60"></textarea>
+    </div>
+    
+    <input type="text" id="field" />
+</body>
+</html>

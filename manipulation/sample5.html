@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+           $("button").click(function(){
+              $(this).parents('tr').remove();
+           }); 
+            $("#btn-all").click(function(){
+                $("input[name=ck]:checked").parents("tr").remove();
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <p>
+        <button id="btn-all">선택삭제</button>
+    </p>
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>체크</th>
+                <th>번호</th>
+                <th>이름</th>
+                <th>전화번호</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="ck"></td>
+                <td>1</td>
+                <td>홍길동</td>
+                <td>010-1111-1111</td>
+                <td><button>X</button></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ck"></td>
+                <td>1</td>
+                <td>강감찬</td>
+                <td>010-2222-2222</td>
+                <td><button>X</button></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ck"></td>
+                <td>1</td>
+                <td>이순신</td>
+                <td>010-3333-3333</td>
+                <td><button>X</button></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ck"></td>
+                <td>1</td>
+                <td>김구</td>
+                <td>010-4444-4444</td>
+                <td><button>X</button></td>
+            </tr>
+            
+        </tbody>
+    </table>
+</body>
+</html>

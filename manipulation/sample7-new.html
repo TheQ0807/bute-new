@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .active {background-color: beige;}
+    </style>
+    <script>
+        $(function() {
+            $('#btn-search').click(function() {
+                var opt = $('#opt-box').val();
+                var word = $.trim($('#word-box').val());
+                var $td;
+                if (word) {
+                    if (opt == 'N') {
+                        $td = $('tbody td:nth-child(2)');
+                    } else if (opt  == 'E'){
+                        $td = $('tbody td:last-child');
+                    }
+                    
+                    $td.each(function() {
+                        if ($(this).text().contains(word)) {
+                            $(this).parents('tr').addClass('active')
+                                                .siblings().removeClass('active');
+                        }
+                    })
+                } else {
+                    alert('검색어를 입력하세요.');
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>사용자 조회하기</h1>
+    
+    <p>
+        <select id="opt-box">
+            <option value="N">이름</option>
+            <option value="E">이메일</option>
+        </select>
+        <input type="text" id="word-box">
+        <button id="btn-search">검색</button>
+    </p>
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>이메일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>김유신</td>
+                <td>kim@gmail.com</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>강감찬</td>
+                <td>kang@naver.com</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>홍길동</td>
+                <td>hong@</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        // 객체 생성하기 - 생성자 함수 사용하기
+        // 함수의 원형 prototype 객체!!!!!
+        // 다른함수랑 구분하기 위해서 첫글자를 대문자로 적는다 
+        function User(n,p){
+            this.name = n;
+            this.phone = p;
+            this.getName = function(){
+                return this.name;
+            };
+            this.getPhone = function(){
+               return this.phone;  
+            };
+
+        }
+        var user1 = new User("홍길동","010-1111-2222");
+        var user2 = new User("김유신","010-2222-3333");
+        
+        console.log(user1);
+        console.log(user2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

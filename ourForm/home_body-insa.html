@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Document</title>
+<style>
+    #aba{
+        margin-left: 30px;
+    }  
+    #bab{
+        margin-left: 20px;
+    }
+    #aba div{
+        border: 2px solid black;
+    }
+    #dept2{
+        margin-top: 15px;
+    }
+    #dept3{
+        margin-top: 15px;
+    }
+    #dept4{
+        margin-top: 15px;
+    }
+    #dept5{
+        margin-top: 15px;
+    }
+    h3{
+        margin-left: 130px;
+    }
+    #empPic{
+        border: 1px solid black;
+    }
+    .pic{
+        width: 190px;
+        height: 190px;
+        margin-right: 100px;
+    }
+    .col-sm-8, .col-sm-4{
+        min-height :200px; 
+    }
+    input{
+        margin-left: 350px;
+    }
+    .serchBar{
+        margin-left: 20px;
+    }
+    .textBox{
+        margin-top: 20px;
+    }
+    img{
+        max-width: 130px; 
+        max-height: 150px;
+    }
+</style>
+</head>
+<body>
+    <h3>직원 명부</h3>
+   <div class="container-fluid">
+    <div class="row">
+        <div id="aba" class="col-sm-2 text-center well">
+            <p>부서 선택</p>
+            <div id="dept1">물류</div>
+            <div id="dept2">인사</div>
+            <div id="dept3">운영</div>
+            <div id="dept4">재무</div>
+            <div id="dept5">서비스</div>
+        </div>
+        <div>
+            <div class="serchBar col-sm-9 text-center well">
+               <p>검색할 이름을 입력하세요</p>
+                   <input type="text" class="col-sm-6" /><button class="text-right">직원 이름 검색</button>
+            </div>
+        </div>
+        <div id="bab" class="col-sm-9 text-center well">
+          <div>
+              <div id="empPic" class="col-sm-4">
+               <div class="col-sm-5">
+                <img src="/im/logo.png" class="pic">
+               </div>
+                <div class="textBox text-left col-sm-6">
+                  <p>이름: </p>
+                  <p>직급: </p>
+                  <p>부서: </p>
+                  <p>전화번호: </p>
+                </div>
+              </div>
+          </div>               
+          </div>
+    </div>
+   </div>
+</body>
+</html>

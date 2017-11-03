@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+            // 각 상품별 구매가격 계산하기
+            $("tbody tr").each(function(){
+               var price = $(this).find("td:eq(2)").text();
+               var number = $(this).find("td:eq(3)").text();
+                $(this).find("td:eq(4)").text(price*number);
+            });
+            
+            // 체크박스의 체크상태가 변경될 때마다 합계 계산하기
+            $(":checkbox[name=ck]").change(function(){
+                var totalPrice = 0;
+                $(":checkbox:checked").each(function(){
+                   var inputPrice = $(this).parents("tr").find("td").last().text();
+                    totalPrice += parseInt(inputPrice);
+                })
+                
+                $("tfoot td:last").text(totalPrice);
+                
+            });
+        })
+    </script>
+</head>
+<body>
+    <h1>구매내역</h1>
+    
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th></th>
+                <th>제품명</th>
+                <th>가격</th>
+                <th>수량</th>
+                <th>구매가격</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="ck" /></td>
+                <td>노트북</td>
+                <td>100</td>
+                <td>1</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ck" /></td>
+                <td>TV</td>
+                <td>50</td>
+                <td>1</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ck" /></td>
+                <td>스피커</td>
+                <td>25</td>
+                <td>2</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ck" /></td>
+                <td>게임기</td>
+                <td>40</td>
+                <td>1</td>
+                <td></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">합계</td>
+                <td>0원</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

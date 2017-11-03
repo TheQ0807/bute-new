@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        div.box{
+            margin: 10px;
+            padding: 10px;
+            height: 300px;
+            border: 1px solid black;
+        }
+        div.small-box {
+            float: left;
+            margin: 5px;
+            padding: 2px;
+            height: 120px;
+            width: 100px;
+            border: 1px solid black;
+        }
+        
+        img {
+            height: 115px;
+            width: 96px;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("img").prop("draggable", true);
+            
+           var imgId;
+            
+            $("img").on("dragstart", function(e){
+                imgId = $(this).index();
+                //console.log("dragstart");
+            });
+            $("html").on("selectstart", function(){
+                return false; 
+            });
+            /*$("img").on("dragend",function(e){
+                $(this).prop("draggable", false);
+               // console.log("dragend");
+            })*/
+            
+            $(".small-box").on("dragover" , function(e){
+                if($(this).find("img").length == 0){
+                    e.preventDefault();
+                }
+               // console.log("dragover");
+            });
+            
+            $(".small-box").on("drop" , function(e){
+                e.preventDefault();
+                var $img = $("#box1 img:eq("+imgId+")");
+                $img.prop("draggable", false);
+                
+                var $clonedImg = $img.clone();
+                $(this).append($clonedImg);
+               //console.log("drop");
+            });
+        })
+    </script>
+</head>
+<body>
+    <h1></h1>
+    
+    <div id="box1" class="box">
+        <img src="../images/0.jpg">
+        <img src="../images/1.jpg">
+        <img src="../images/2.jpg">
+        <img src="../images/3.jpg">
+        <img src="../images/4.jpg">
+        <img src="../images/5.jpg">
+        <img src="../images/6.jpg">
+        <img src="../images/7.jpg">
+    </div>
+    
+    <div id="box2" class="box">
+        <div class="small-box"></div>
+        <div class="small-box"></div>
+        <div class="small-box"></div>
+        <div class="small-box"></div>
+        <div class="small-box"></div>
+        <div class="small-box"></div>
+        <div class="small-box"></div>
+        <div class="small-box"></div>
+    </div>
+</body>
+</html>

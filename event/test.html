@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        div.book-box {
+            float: left;
+            margin: 10px;
+            padding: 10px;
+            width: 607px;
+            height: 350px;
+            border: 1px solid black;
+        }
+        div.book {
+            float: left;
+            padding: 2px;
+            margin:5px;
+            width:100px;
+            border: 1px solid silver;
+            text-align: center;
+        }
+        img {
+            height: 115px;
+            width: 96px;
+        }
+    </style>
+    <script>
+        $(function(){
+            $(".book").prop("draggable", true);
+            
+            $(".book").on("dragstart", function(e){
+                e.originalEvent.dataTransfer.setData("index",$(this).index());
+            });
+            $("#box-2").on("dragover" , function(e){
+                    e.preventDefault();
+            }).on("drop" , function(e){
+                e.preventDefault();
+                var index = e.originalEvent.dataTransfer.getData("index");
+                $(this).append($("#box-1 .book").eq(index));
+                
+                var totalPrice = 0;
+                $(this).find(".book span").each(function(){
+                    totalPrice += parseInt($(this).text());
+                    $(".book").prop("draggable",false);
+                });
+                $(":input[name=orderprice]").val(totalPrice);
+             });
+        });
+    </script>
+</head>
+<body>
+    
+    <div class="book-box" id="box-1">
+        <div class="book">
+            <img src="../images/0.jpg">
+            <div><small>82년생 김지영</small></div>
+            <div style="text-align: right;"><span>16000</span> 원</div>
+        </div>
+        <div class="book">
+            <img src="../images/1.jpg">
+            <div><small>살인자의 기억업</small></div>
+            <div style="text-align: right;"><span>20000</span> 원</div>
+        </div>
+        <div class="book">
+            <img src="../images/2.jpg">
+            <div><small>주진우 추격기</small></div>
+            <div style="text-align: right;"><span>26000</span> 원</div>
+        </div>
+        <div class="book">
+            <img src="../images/3.jpg">
+            <div><small>언어의 온도</small></div>
+            <div style="text-align: right;"><span>21000</span> 원</div>
+        </div>
+        <div class="book">
+            <img src="../images/4.jpg">
+            <div><small>바깥은 여름</small></div>
+            <div style="text-align: right;"><span>14000</span> 원</div>
+        </div>
+    </div>
+    
+    <div class="book-box" id="box-2">
+    
+    </div>
+    
+    <div style="clear: both;">
+        구매가격: <input type="text" name="orderprice" /> 원
+    </div>
+</body>
+</html>

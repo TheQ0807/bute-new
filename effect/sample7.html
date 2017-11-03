@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            background-color: coral;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#go").click(function a(){
+               $("div").animate({left:"+=300px"},"slow");
+               $("div").animate({top:"+=300px"},"slow");
+               $("div").animate({left:"-=300px"},"slow");
+               $("div").animate({top:"-=300px"},"slow", arguments.callee); //arguments.callee는 함수 내에서 자기자신을 지칭하는 특별한 함수다.
+            });
+            $("#stop").click(function(){
+                a.stop().animate();
+            });
+                
+        })
+    </script>
+</head>
+<body>
+    <button id="go">Go</button>
+    <button id="stop">Stop</button>
+    
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        p {margin: 3px; padding: 3px; background-color: coral;}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#btn-fade-in").click(function(){
+               $("p").fadeIn("slow");
+           });
+            $("#btn-fade-out").click(function(){
+               $("p").fadeOut("slow");
+           });
+            $("#btn-fade-toggle").click(function(){
+               $("p").fadeToggle("slow");
+           });
+            
+            $("#btn-slide-down").click(function(){
+               $("p").slideDown("slow");
+           });
+            $("#btn-slide-up").click(function(){
+               $("p").slideUp("slow");
+           });
+            $("#btn-slide-toggle").click(function(){
+               $("p").slideToggle("slow");
+           });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <button id="btn-fade-in">fadeIn</button>
+        <button id="btn-fade-out">fadeOut</button>
+        <button id="btn-fade-toggle">fadeToggle</button>
+        
+        <button id="btn-slide-down">slideDown</button>
+        <button id="btn-slide-up">slideUp</button>
+        <button id="btn-slide-toggle">slideToggle</button>
+    </div>
+    
+    <p>
+        김관진 전 장관의 출국금지와 관련해 네티즌들은 “bear**** 한나라의 국방장관이 그것도 두 정권 동안 역임했던 이후에도 청와대로 가서 최고의 자리에 있던 4성장군 출신인 분이 이런 지질한 일에 엮여 있었다 상상하기도 싫습니다. 갑자기 어퓨굿맨이라는 탐크루즈 주연의 영화가 생각나네요. 명예를 위해” “kcm8**** 에휴” “soon**** 지키라는 나라는 안 지키고” “khgh**** 그렇게 안 봤는데” “rlar**** 예전부터 위태 위태 했지. 결국 한건 했네” “jkj2**** 참 썩어도 이렇게 썩나? 나라 참 인재 없다” “pcme**** 나라꼴이 말이 아니네. 점점 군대도 자기편으로 만드는 단계가 왔구만” 등 비판적 반응 일색이다. 
+    </p>
+</body>
+</html>

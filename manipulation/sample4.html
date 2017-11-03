@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+            $("#best-drink").prev().css("color","blue");
+            $("#best-drink").next().css("color","orange");
+            $("#best-drink").siblings().css("font-size","1.5em");
+            $("h3").css("color","darkred");
+            $("h1").css("color","yellow");
+            $("h1").css("background","black");
+            
+            $("#best-drink").parent().css("color","red");
+            console.log($("#best-drink").parents('#box-1'));
+            
+            $("ol").children().css("text-decoration","underline");
+        })
+    </script>
+</head>
+<body>
+    <h1>h1</h1>
+    <div id="box-1">
+        <h3>음료 매출 순위</h3>
+        <ol>
+            <li>따뜻한 커피</li>
+            <li id="best-drink">따뜻한 녹차</li>
+            <li>따뜻한 쌍화차</li>
+        </ol>
+        <p>날씨가 추워져서 따뜻한 음료의 판매량이 증가하고 있음</p>
+    </div>
+    <div id="box-2">
+        
+    </div>
+</body>
+</html>

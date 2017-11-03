@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        body, div {padding: 5px; border: 1px solid black;}
+    </style>
+    <script>
+        $(function(){
+            $("#box-1 ~ p").css('color','orange');// $("div p") div의 후손중에서 p를 선택해라/이것만 하위계념 밑에 나머지는 기호를 쓰기위해서 한칸씩 빈칸을 만든것이다.
+            $("p:eq(9)").css('color','red');  //$("div, p")   div와 p를 선택해라
+                                                //$("div > p")  div의 자식중에서 p를 선택해라
+                                                //$("div + p")  div의 바로 밑에 동생인 p를 선택해라
+                                                //$("div ~ p")  div의 동생들 중에서 p를 선택해라
+        });
+    </script>
+</head>
+<body>
+     <h1>자식요소 필터 선택자</h1>
+    
+    <div id="box-1">
+        <p>p1</p>
+        <p>p2</p>
+        <p>p3</p>
+        <p>p4</p>
+        <p>p5</p>
+    </div>
+    <div>
+        <p>p6</p>
+        <p>p7</p>
+        <p>p8</p>
+        <p>p9</p>
+        <p>p10</p>
+    </div>
+    
+        <p>p11</p>
+        <p>p12</p>
+        <p>p13</p>
+        <p>p14</p>
+        <p>p15</p>
+    
+</body>
+</html>

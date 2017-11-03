@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<events>
+    <event>
+        <location>센프란시스코</location>
+        <date>5월 1일</date>
+        <map>인사동 쌈지길</map>
+    </event>
+    <event>
+        <location>광화문</location>
+        <date>5월 3일</date>
+        <map>광화문 광장</map>
+    </event>
+    <event>
+        <location>강남</location>
+        <date>5월 10일</date>
+        <map>코엑스</map>
+    </event>
+</events>

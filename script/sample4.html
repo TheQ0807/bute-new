@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        Date.prototype.formatDate = function(){
+            var text = "";
+            text += this.getFullYear() + "-";
+            text += (this.getMonth() +1)+ "-";
+            text += this.getDate();
+            return text;
+        }
+        
+        String .prototype.trimTextByLength = function(){
+            if(this.length <= len){
+                return this.tostring();
+            }
+            return this.substr(0.len)+ "....";
+        }
+        
+        var today = new Date();
+        console.log(today).formatDate());
+        
+        console.log("적폐청산위 모든 화살 MB 로  MB 퇴행적 시도 반발".trimTextByLength(10));
+        colsole.log("적폐청산위".trimTextByLength(10));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

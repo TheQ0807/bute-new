@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 600px;
+            height: 300px;
+            overflow: hidden;
+        }
+        .image-box{
+            position: relative;
+            width: 2200px;
+        }
+        img {
+            float: left;
+            margin: 0;
+            width: 200px;
+            height: 300px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#btn-right").click(function(){
+                $(".image-box").stop().animate({left:"+=200px"});
+            });
+            $("#btn-left").click(function(){
+                $(".image-box").stop().animate({left:"-=200px"});
+            });
+        })
+    </script>
+</head>
+<body>
+    <p>
+        <button id="btn-right">right</button>
+        <button id="btn-left">left</button>
+    </p>
+    
+    <div id="box">
+        <div class="image-box">
+            <img src="../images/0.jpg">
+            <img src="../images/1.jpg">
+            <img src="../images/2.jpg">
+            <img src="../images/3.jpg">
+            <img src="../images/4.jpg">
+            <img src="../images/5.jpg">
+            <img src="../images/6.jpg">
+            <img src="../images/7.jpg">
+        </div>
+    </div>
+</body>
+</html>

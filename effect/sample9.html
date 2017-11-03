@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        h1, p, div {background-color: orange;}
+    </style>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                $("h1").animate({opacity:0.3},{duration:2000, step:function(now,fx){
+                    $("p").css("opacity",now/1.2);
+                    $("div").css("opacity",now/1.6);
+                }});
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>Go</button>
+    
+    <h1>스팀 fps 게임 인서전시(insurgency)</h1>
+    <p>이번에 소개하는 스팀 할인 게임은 시가전 리얼리티 fps 인서전시(insurgency) 입니다</p>
+    <div> 구독만 한다고 적용되지 않으니 하단의 설치방법을 참조해주세요.
+
+이 컨텐츠는 현재 인서전시에 사용된 공식 한국어 버전으로써 정식 업데이트 전, 미리 테스트할 수 있는 모드입니다. 정식 업데이트 이전, 수정된 한국어로 먼저 플레이하시고 싶으신 분들은 이 모드를 구독해주시면 됩니다.
+
+관련 블로그 : http://blog.naver.com/toer12 
+인서전시 한국 그룹 : http://steamcommunity.com/groups/KIGhome 
+OSF + KIG 서버 그룹 : http://steamcommunity.com/groups/groupforokis 
+ 
+[1]. 열며..
+
+현재 인서전시에 사용된 공식 한국어 버전으로써 정식 업데이트 전, 미리 테스트할 수 있는 모드입니다. 
+
+정규 게임 업데이트에 발맞춰 계속 업데이트될 계획입니다. 
+
+제작자: Eden Kim 
+검수 도움: Monochrome 
+추가 도움: EI EI 
+ 
+[2]. 설치 방법
+
+앞서, 인서전시 게임의 언어를 '영어' 또는 '한국어'로 두시기 바랍니다.
+
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        div {
+            position: relative;
+            background-color: coral;
+            width: 50px;
+            height: 50px;
+            float: left;
+            margin: 5px;
+        }
+    </style>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("button").click(function(){
+              /* $("div").animate({left:"+=300"},"slow");
+               $("div").animate({top:"+=300"},"slow");
+               $("div").animate({left:"-=300"},"slow");
+               $("div").animate({top:"-=300"},"slow");*/
+               $("div:first").animate({left:"+=100px"},{duration:500 , step:function(now,fx){
+                   // duration은 속도, now는 위에서 처음에 움직이는 것의 거리,fx는 여러효과들을 가지고 잇는 객체다.
+                   $("div:gt(0)").css("left", now);
+               }});
+            });
+        })
+    </script>
+</head>
+<body>
+    <p><button>Go</button></p>
+    
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <style>
+        a{
+            width: 160px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+  <div class="container">
+   <h3>운영 페이지</h3>
+    <ul class="nav navbar-nav">
+      <li name="name1"><a href="#">인사팀</a>
+          <ul name="de1">
+              <li><a href="#">직원</a></li>
+              <li><a href="#">휴가자현황</a></li>
+              <li><a href="#">휴가신청현황</a></li>
+          </ul>
+      </li>
+      <li name="name2"><a href="#">물류팀</a>
+          <ul name="de2">
+              <li><a href="#">물품재고현황</a></li>
+              <li><a href="#">물품 구입</a></li>
+              <li><a href="#">전자 결제</a></li>
+          </ul>
+      </li>
+      <li name="name3"><a href="#">재무팀</a>
+          <ul name="de3">
+              <li><a href="#">상세매출</a></li>
+              <li><a href="#">물류관련비용현황</a></li>
+              <li><a href="#">인사관련비용현황</a></li>
+              <li><a href="#">서비스관련현황</a></li>
+          </ul>
+      </li> 
+      <li name="name4"><a href="#">공지사항관리</a>
+          <ul name="de4">
+              <li><a href="#">사내</a></li>
+              <li><a href="#">고객</a></li>
+          </ul>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+              <li><a href="">로그인</a></li>
+              <li><a href="">로그아웃</a></li>
+    </ul>
+  </div>
+</nav>
+</body>
+<script>
+$(function(){
+    $("[name=de1]").hide();
+    $("[name=de2]").hide();
+    $("[name=de3]").hide();
+    $("[name=de4]").hide();
+    $("[name=name1]").hover(function(){
+        $("[name=de1]").show();
+    }, function(){
+      $("[name=de1]").hide()  
+    });
+    $("[name=name2]").hover(function(){
+        $("[name=de2]").show();
+    }, function(){
+      $("[name=de2]").hide()  
+    });
+    $("[name=name3]").hover(function(){
+        $("[name=de3]").show();
+    }, function(){
+      $("[name=de3]").hide()  
+    });
+    $("[name=name4]").hover(function(){
+        $("[name=de4]").show();
+    }, function(){
+      $("[name=de4]").hide()  
+    });
+})
+
+</script>
+</html>

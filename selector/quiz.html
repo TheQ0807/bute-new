@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+   <h1>셀렉터 연습</h1>
+   
+   <div id="first-box">
+       <h3>영화 예매순위</h3>
+       <ol>
+           <li>택시운전사</li>
+           <li>킹스맨</li>
+           <li>어벤져스</li>
+       </ol>
+   </div>
+    <div id="sec-box">
+        <h3>개봉예정 영화</h3>
+        <ul>
+           <li>어벤져스4</li>
+           <li>토르</li>
+           <li>수퍼맨</li>
+           <li>캡틴마블</li>
+       </ul>
+    </div>
+    <div>
+        찾아보기<input type="text" id="keyword-box"><button id="btn">검색</button>
+    </div>
+<script>
+    // h1 태그의 내용을 : "jquery 선택자 연습"으로 변경하시오
+    // 현재 개봉중인 영화중 예매순위가 가장높은 영화의 제목을 빨간색으로 변경하기
+    // 현재 개봉중인 영화 중에서 예매순위가 가장 낮은 영화의 제목을 읽어오기
+    
+    // 검색버튼을 클릭하면 입력창에 입력한 영화 제목을 포함하고 있는 엘리먼트를 찾아서 핑크색으로 바꾸기
+    
+    $("h1").text("jquery 선택자 연습");
+    $("li:first").css("color","red");
+    var lastname = $("li:last").text();
+    console.log(lastname);
+    $("#btn").click(function(){
+        var fir = $("#keyword-box").val();
+        console.log(fir);
+        $("#sec-box li:not(:contains("+fir+"))").css("color","black"); //$("#sec-box li").css("color","black");
+        $("#sec-box li:contains("+fir+")").css("color","pink");
+    });
+    
+    
+</script>
+</body>
+</html>

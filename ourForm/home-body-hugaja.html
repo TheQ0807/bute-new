@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Document</title>
+<style>
+    #aba{
+        margin-left: 30px;
+    }  
+    #bab{
+        margin-left: 20px;
+    }
+    #aba div{
+        border: 2px solid black;
+    }
+    #dept2{
+        margin-top: 15px;
+    }
+    #dept3{
+        margin-top: 15px;
+    }
+    #dept4{
+        margin-top: 15px;
+    }
+    #dept5{
+        margin-top: 15px;
+    }
+    h3{
+        margin-left: 130px;
+    }
+    input{
+        margin-left: 350px;
+    }
+    .serchBar{
+        margin-left: 20px;
+    }
+    th{
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <h3>직원 명부</h3>
+   <div class="container-fluid">
+    <div class="row">
+        <div id="aba" class="col-sm-2 text-center well">
+            <p>부서 선택</p>
+            <div id="dept1">물류</div>
+            <div id="dept2">인사</div>
+            <div id="dept3">운영</div>
+            <div id="dept4">재무</div>
+            <div id="dept5">서비스</div>
+        </div>
+        <div>
+            <div class="serchBar col-sm-9 text-center well">
+               <p>검색할 이름을 입력하세요</p>
+                   <input type="text" class="col-sm-6" /><button class="text-right">직원 이름 검색</button>
+            </div>
+        </div>
+        <div id="bab" class="col-sm-9 well">
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th>부서이름</th>
+                        <th>이름</th>
+                        <th>전화번호</th>
+                        <th>이메일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>김유신</td>
+                        <td>kim@gmail.com</td>
+                        <td>kim@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>강감찬</td>
+                        <td>kang@naver.com</td>
+                        <td>kang@naver.com</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>홍길동</td>
+                        <td>hong@</td>
+                        <td>hong@</td>
+                    </tr>
+                </tbody>
+    </table> 
+        </div>
+    </div>
+   </div>
+</body>
+</html>

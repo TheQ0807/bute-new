@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .red{background-color: red;}
+    </style>
+    <script>
+        $(function(){
+          $("#btn-search").click(function(){
+            var inputValue = $("input#word-box").val();
+            if($("#opt-box").val() == "N"){
+                $("tr").removeClass();
+                $("tr :nth-child(2):contains("+inputValue+")").parent().addClass("red");
+               }
+            if($("#opt-box").val()=="E"){
+                $("tr").removeClass();
+                $("tr :nth-child(3):contains("+inputValue+")").parent().addClass("red");
+            }
+              /*if($("#opt-box").val()=="N"){
+                  $("tr").removeClass();
+                  $("tr :nth-child(2)").each(function(){
+                      console.log($(this).text()==inputValue);
+                      if($(this).text()==inputValue){
+                          $(this).parent().addClass("red");
+                      }                  
+                  });
+                   
+                 }
+              if($("#opt-box").val()=="E"){
+                  $("tr").removeClass();
+                  $("tr :nth-child(3)").each(function(){
+                      console.log($(this).text()==inputValue);
+                      if($(this).text()==inputValue){
+                          $(this).parent().addClass("red");
+                      }                  
+                  });
+                   
+                 }*/
+          })
+            
+        });
+    </script>
+</head>
+<body>
+    <h1>사용자 조회하기</h1>
+    
+    <p>
+        <select id="opt-box">
+            <option value="N">이름</option>
+            <option value="E">이메일</option>
+        </select>
+        <input type="text" id="word-box">
+        <button id="btn-search">검색</button>
+    </p>
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>이메일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>김유신</td>
+                <td>kim@gmail.com</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>강감찬</td>
+                <td>kang@naver.com</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>홍길동</td>
+                <td>hong@</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

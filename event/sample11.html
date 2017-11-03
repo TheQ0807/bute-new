@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        img {
+            margin: : 5px;
+            width: 100px;
+            height: 120px;
+        }
+    </style>
+    <script>
+    $(function(){
+        
+        var images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"];
+        
+       $("#btn").click(function(){
+           var image = images.shift();
+         /*  var $img =  $("<img src='../images/"+image+"' />")
+                            .mouseenter(function(){
+                               console.log("aaa") ;
+                            });
+           $("#box").append($img);*/
+           var $img = $("<img src='../images/"+image+"'/>");
+           $img.css("opacity", "0.5");
+           $img.hover(function(){
+               $(this).css("opacity","1");
+           },function(){
+               $(this).css("opacity","0.5");
+           })
+           $("#box").append($img);
+       });
+    });
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+    
+    <button id="btn">추가하기</button>
+</body>
+</html>

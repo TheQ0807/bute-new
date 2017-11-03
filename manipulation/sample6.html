@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        div {padding: 5px; border: 1px solid; height: 160px; width: 300px;}
+        span {display: inline-block; padding: 2px; width: 100px; border: 1px solid green; text-align: center; margin: 5px; cursor: pointer;}
+        .highlight {background-color: yellow;}
+    </style>
+    <script>
+        $(function(){
+            $("span").click(function(){
+                $(this).addClass("highlight").siblings().removeClass("highlight");
+            });
+            $("#btn-down").click(function(){
+               $("#box2").append($("span.highlight"));
+                $("#box2").children().removeClass("highlight");
+            });
+            $("#btn-up").click(function(){
+               $("#box1").append($("span.highlight"));
+                $("#box1").children().removeClass("highlight");
+            });
+            $("#btn-add").click(function(){
+                var newName = $("#name-field").val();
+                var inExit = false;
+                $("span").each(function(){
+                    console.log($(this).text());
+                    if($(this).text()==newName){
+                        inExit = true; 
+                    }
+                });
+                if(!inExit){
+                    $("#box1").append("<span>"+newName +"</span>");
+                }
+                
+                $("input#name-field").val("");
+            });
+        });
+        
+       
+    </script>
+</head>
+<body>
+   <h1>사원 리스트</h1>
+   
+   <p>
+       사원명: <input type="text" id="name-field"/><button id="btn-add">등록</button>
+   </p>
+   
+   <div id="box1">
+       <span class="highlight">이순신</span>
+       <span>김유신</span>
+       <span>강감찬</span>
+       <span>홍길동</span>
+       <span>류관순</span>
+   </div>
+   <p>
+       <button id="btn-up">Up</button>
+       <button id="btn-down">Down</button>
+   </p>
+   <div id="box2"></div>
+</body>
+</html>
