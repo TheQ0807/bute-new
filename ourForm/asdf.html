@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="pragma" content="no-cache"/>
+	<meta http-equiv="pragma" content="no-store"/>
+	<meta http-equiv="cache-control" content="no-cache"/>
+	<meta http-equiv="Expires" content="-1"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://script.gmkt.kr/pc/js/ko/vip.js?_cb=20170810080000"></script>
+    <title>PersonnelList</title>
+<style>
+     
+    div.container {
+        max-height: 1024px;
+    }
+    img{
+        max-width: 130px; 
+        max-height: 150px;
+    }
+    
+</style>
+<script>
+   $(function(){
+		$('.vip').uxePositionFix({
+			'limitSelector': '#people',
+			'ctrlTop': 56
+		});
+
+		var optionLayerleftCtrl = function(){
+			var winWidth = $(window).innerWidth();
+			var sLeft = $(document).scrollLeft();
+			var $optionLayer = $('.vip');
+			
+			if( winWidth >= 1200 || $optionLayer.hasClass('fixed') == false ){
+				$('.vip').css('left','');
+			}
+			if(winWidth < 1200 &&  $optionLayer.hasClass('fixed') == true &&  $optionLayer.hasClass('on') == false){
+				var optLeft = $('.vip-detailoption_wrap').offset().left;
+				$('.vip .fixed').css('left', optLeft-sLeft);
+			}
+		};
+
+		$(window).on('scroll resize',function(){
+			if( $('.vip-detailoption_wrap').size()>0 && $('#footer').size()>0){
+				optionLayerleftCtrl();
+				vipFixedLayerHeightCtrl();
+			}
+		});
+   });
+</script>
+</head>
+<body>
+   <div class="container">
+    <h3>직원 명부</h3>
+    <div class="row">
+        <div class="vip col-sm-3 well">
+                <ul class="nav nav-pills nav-stacked text-center">
+                    <li class="active" id="DEPT-INVEN"><a href="#">물류</a></li>
+                    <li id="DEPT-HR"><a href="#">인사</a></li>
+                    <li id="DEPT-ADMIN"><a href="#">운영</a></li>
+                    <li id="DEPT-FIN"><a href="#">재무</a></li>
+                    <li id="DEPT-SC"><a href="#">서비스</a></li>
+                </ul>
+        </div>
+        <div class="col-sm-1"></div>
+            <div>
+                <div class="serchBar col-sm-8 well">
+                   <p>검색할 이름을 입력하세요</p>
+                       <input type="text" class="col-sm-6" value="${param.keyword}" />
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+                <div id="bab" class="col-sm-8 text-center well">
+                	<c:forEach var="emp" items="${employees }">
+                    <div id="people">
+                        <div id="empPic" class="col-sm-6 well">
+                           <div class="col-sm-5">
+                                <img src="/resources/images/emp/${emp.pic }" class="pic">
+                           </div>
+                           <div class="textBox text-left col-sm-6">
+                               <label>이름</label>
+                               <p>${emp.name } </p>
+                               <label>직급</label>
+                               <p>${emp.position.name }</p>
+                               <label>부서</label>
+                               <p>${emp.department.name } </p>
+                               <label>전화번호</label>
+                               <p>${emp.phone } </p><label>이름</label>
+                               <p>${emp.name } </p>
+                               <label>직급</label>
+                               <p>${emp.position.name }</p>
+                               <label>부서</label>
+                               <p>${emp.department.name } </p>
+                               <label>전화번호</label>
+                               <p>${emp.phone } </p><label>이름</label>
+                               <p>${emp.name } </p>
+                               <label>직급</label>
+                               <p>${emp.position.name }</p>
+                               <label>부서</label>
+                               <p>${emp.department.name } </p>
+                               <label>전화번호</label>
+                               <p>${emp.phone } </p><label>이름</label>
+                               <p>${emp.name } </p>
+                               <label>직급</label>
+                               <p>${emp.position.name }</p>
+                               <label>부서</label>
+                               <p>${emp.department.name } </p>
+                               <label>전화번호</label>
+                               <p>${emp.phone } </p><label>이름</label>
+                               <p>${emp.name } </p>
+                               <label>직급</label>
+                               <p>${emp.position.name }</p>
+                               <label>부서</label>
+                               <p>${emp.department.name } </p>
+                               <label>전화번호</label>
+                               <p>${emp.phone } </p><label>이름</label>
+                               <p>${emp.name } </p>
+                               <label>직급</label>
+                               <p>${emp.position.name }</p>
+                               <label>부서</label>
+                               <p>${emp.department.name } </p>
+                               <label>전화번호</label>
+                               <p>${emp.phone } </p><label>이름</label>
+                               <p>${emp.name } </p>
+                               <label>직급</label>
+                               <p>${emp.position.name }</p>
+                               <label>부서</label>
+                               <p>${emp.department.name } </p>
+                               <label>전화번호</label>
+                               <p>${emp.phone } </p><label>이름</label>
+                               <p>${emp.name } </p>
+                               <label>직급</label>
+                               <p>${emp.position.name }</p>
+                               <label>부서</label>
+                               <p>${emp.department.name } </p>
+                               <label>전화번호</label>
+                               <p>${emp.phone } </p>
+                           </div>
+                       </div>
+                  </div>               
+                	</c:forEach>
+              </div>
+    </div>
+   </div>
+</body>
+</html>

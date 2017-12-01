@@ -7,61 +7,42 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Document</title>
 <style>
-    #aba{
-        margin-left: 30px;
-    }  
-    #bab{
-        margin-left: 20px;
-    }
-    #aba div{
-        border: 2px solid black;
-    }
-    #dept2{
-        margin-top: 15px;
-    }
-    #dept3{
-        margin-top: 15px;
-    }
-    #dept4{
-        margin-top: 15px;
-    }
-    #dept5{
-        margin-top: 15px;
-    }
-    h3{
-        margin-left: 130px;
-    }
-    input{
-        margin-left: 350px;
-    }
-    .serchBar{
-        margin-left: 20px;
-    }
-    th{
-        text-align: center;
+    div.container {
+        max-height: 1024px;
     }
 </style>
+<script>
+   $(function(){
+    $("li a").click(function(){
+        $("li").removeClass("active");
+        $(this).closest("li").addClass("active");
+    });
+   });
+</script>
 </head>
 <body>
-    <h3>직원 명부</h3>
-   <div class="container-fluid">
+   <div class="container">
+    <h3>휴가자 현황</h3>
     <div class="row">
-        <div id="aba" class="col-sm-2 text-center well">
-            <p>부서 선택</p>
-            <div id="dept1">물류</div>
-            <div id="dept2">인사</div>
-            <div id="dept3">운영</div>
-            <div id="dept4">재무</div>
-            <div id="dept5">서비스</div>
+        <div class="col-sm-3 well">
+            <ul class="nav nav-pills nav-stacked text-center">
+                <li class="active"><a href="#">물류</a></li>
+                <li><a href="#">인사</a></li>
+                <li><a href="#">운영</a></li>
+                <li><a href="#">재무</a></li>
+                <li><a href="#">서비스</a></li>
+            </ul>
         </div>
+        <div class="col-sm-1"></div>
         <div>
-            <div class="serchBar col-sm-9 text-center well">
+            <div class="serchBar col-sm-8 text-center well">
                <p>검색할 이름을 입력하세요</p>
                    <input type="text" class="col-sm-6" /><button class="text-right">직원 이름 검색</button>
             </div>
         </div>
-        <div id="bab" class="col-sm-9 well">
-            <table class="table text-center">
+        <div class="col-sm-1"></div>
+        <div id="bab" class="col-sm-8 well">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>부서이름</th>
@@ -77,20 +58,8 @@
                         <td>kim@gmail.com</td>
                         <td>kim@gmail.com</td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>강감찬</td>
-                        <td>kang@naver.com</td>
-                        <td>kang@naver.com</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>홍길동</td>
-                        <td>hong@</td>
-                        <td>hong@</td>
-                    </tr>
                 </tbody>
-    </table> 
+            </table> 
         </div>
     </div>
    </div>
